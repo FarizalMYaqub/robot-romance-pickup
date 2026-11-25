@@ -31,6 +31,8 @@ def check_line(line):
     one line. Returns (chars, words) or exits with an explanation."""
     if not line.strip():
         sys.exit("line is blank")
+    if line != line.strip():
+        sys.exit("line has leading or trailing whitespace")
     if "\n" in line:
         sys.exit("line must be a single line")
     chars = len(line)
